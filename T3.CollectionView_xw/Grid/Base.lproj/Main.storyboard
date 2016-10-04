@@ -32,7 +32,7 @@
                                     <action selector="sendValue4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8v-WV-zuC"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-fb-kaQ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-fb-kaQ">
                                 <rect key="frame" x="0.0" y="50" width="600" height="450"/>
                                 <color key="backgroundColor" red="0.99962579024227172" green="1" blue="0.99786115976873757" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="1" minY="1" maxX="1" maxY="1"/>
@@ -53,7 +53,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-N3-PUa">
                                                     <rect key="frame" x="4" y="14" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -123,6 +123,10 @@
                                     <action selector="sendValue1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKB-jU-i9c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD6-u5-Avo">
+                                <rect key="frame" x="257" y="560" width="87" height="30"/>
+                                <state key="normal" title="Sort the grid"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -132,14 +136,13 @@
                             <constraint firstItem="Vz8-lh-0kb" firstAttribute="leading" secondItem="rHn-Kb-rfY" secondAttribute="trailing" constant="8" id="Bns-E2-0DD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qcz-2I-MCL" secondAttribute="bottom" constant="34" id="G7w-th-MKM"/>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="GNx-K0-5tQ"/>
-                            <constraint firstItem="xBd-fb-kaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="KOE-8x-XoZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iPh-kY-6Ch" secondAttribute="bottom" constant="34" id="KYm-c7-NSP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zh0-qb-pHk" secondAttribute="bottom" constant="34" id="Niz-ZN-OKK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="100" id="QTa-rZ-y8M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rHn-Kb-rfY" secondAttribute="bottom" constant="34" id="Rtd-mG-865"/>
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" id="UfA-TU-37X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vz8-lh-0kb" secondAttribute="bottom" constant="34" id="Xxx-pc-Akh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sD6-u5-Avo" secondAttribute="bottom" constant="10" id="Y2W-hG-Iqg"/>
                             <constraint firstItem="9pD-D0-xNn" firstAttribute="leading" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="8" id="bRL-X7-TNL"/>
                             <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="oBL-VD-58R" secondAttribute="trailing" constant="8" id="bWl-lT-NHW"/>
                             <constraint firstItem="Zh0-qb-pHk" firstAttribute="leading" secondItem="iPh-kY-6Ch" secondAttribute="trailing" constant="8" id="cSK-8C-jfT"/>
@@ -149,6 +152,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9pD-D0-xNn" secondAttribute="bottom" constant="34" id="nhj-Dy-LKH"/>
                             <constraint firstItem="oBL-VD-58R" firstAttribute="leading" secondItem="Zh0-qb-pHk" secondAttribute="trailing" constant="8" id="rgx-tP-J9V"/>
                             <constraint firstItem="7lI-gP-3sT" firstAttribute="leading" secondItem="n5g-3m-5cJ" secondAttribute="trailing" constant="8" id="uoF-v8-sM7"/>
+                            <constraint firstItem="sD6-u5-Avo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yIF-d5-6hi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -162,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="288"/>
+            <point key="canvasLocation" x="598" y="336"/>
         </scene>
     </scenes>
 </document>
