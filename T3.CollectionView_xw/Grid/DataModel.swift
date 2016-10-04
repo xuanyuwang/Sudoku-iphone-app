@@ -15,13 +15,17 @@ class DataModel {
         nums = Array(count: numItemsPerRow, repeatedValue: Array(count: numItemsPerRow, repeatedValue: initialization))
         
         // populate grid with random numbers
+//        for i in nums.indices {
+//            for j in nums.indices {
+//                nums[i][j] = Int(arc4random() % 10)
+//            }
+//        }
+        //initialize those cells with -1
         for i in nums.indices {
             for j in nums.indices {
-                nums[i][j] = Int(arc4random() % 10)
+                nums[i][j] = Int(-1)
             }
         }
-        
-        
         
     }
     
