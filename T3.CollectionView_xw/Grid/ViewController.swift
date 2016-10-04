@@ -121,6 +121,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 /////////////////////////////////  fill empty cells  ///////////////////////////////
     @IBAction func fillEmptyCells(sender: UIButton) {
         data.assign_num_random()//fill empty cells
+        var each_row = [Int](count: 9, repeatedValue: 0)
+        //var each_row_sorted: [Int] = []
+        for row_num in data.nums.indices{
+            for column_num in data.nums.indices{
+                each_row[column_num] = data.get_num(row_num, column: column_num)
+            }
+            each_row.sortInPlace(<)
+            for column_num in data.nums.indices{
+                data.set_num(row_num, column: column_num, value: each_row[column_num])
+            }
+        }
         collectionView.reloadData()//update view
     }
     
