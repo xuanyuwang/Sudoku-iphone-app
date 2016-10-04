@@ -32,48 +32,6 @@
                                     <action selector="sendValue4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8v-WV-zuC"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-fb-kaQ">
-                                <rect key="frame" x="0.0" y="50" width="600" height="450"/>
-                                <color key="backgroundColor" red="0.99962579024227172" green="1" blue="0.99786115976873757" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="scrollIndicatorInsets" minX="1" minY="1" maxX="1" maxY="1"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="Wo4-mB-mGs">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="1" minY="1" maxX="1" maxY="1"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataCell" id="7nd-Ey-R32" customClass="SudokuCollectionViewCell" customModule="Grid">
-                                        <rect key="frame" x="1" y="1" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-N3-PUa">
-                                                    <rect key="frame" x="4" y="14" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="cR2-N3-PUa" firstAttribute="centerY" secondItem="7nd-Ey-R32" secondAttribute="centerY" id="GIp-tq-Qez"/>
-                                            <constraint firstItem="cR2-N3-PUa" firstAttribute="centerX" secondItem="7nd-Ey-R32" secondAttribute="centerX" id="ots-tz-559"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="label" destination="cR2-N3-PUa" id="wcZ-5G-xcs"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AP2-mo-eYa"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oab-KZ-neS"/>
-                                </connections>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pD-D0-xNn">
                                 <rect key="frame" x="323" y="536" width="30" height="30"/>
                                 <state key="normal" title="6"/>
@@ -126,7 +84,52 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD6-u5-Avo">
                                 <rect key="frame" x="257" y="560" width="87" height="30"/>
                                 <state key="normal" title="Sort the grid"/>
+                                <connections>
+                                    <action selector="fillEmptyCells:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1TK-Zm-Z4w"/>
+                                </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-fb-kaQ">
+                                <rect key="frame" x="0.0" y="50" width="600" height="450"/>
+                                <color key="backgroundColor" red="0.99962579024227172" green="1" blue="0.99786115976873757" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Wo4-mB-mGs">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="1" minY="1" maxX="1" maxY="1"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataCell" id="7nd-Ey-R32" customClass="SudokuCollectionViewCell" customModule="Grid">
+                                        <rect key="frame" x="1" y="1" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR2-N3-PUa">
+                                                    <rect key="frame" x="4" y="14" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="cR2-N3-PUa" firstAttribute="centerY" secondItem="7nd-Ey-R32" secondAttribute="centerY" id="GIp-tq-Qez"/>
+                                            <constraint firstItem="cR2-N3-PUa" firstAttribute="centerX" secondItem="7nd-Ey-R32" secondAttribute="centerX" id="ots-tz-559"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="cR2-N3-PUa" id="wcZ-5G-xcs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AP2-mo-eYa"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oab-KZ-neS"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -137,7 +140,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qcz-2I-MCL" secondAttribute="bottom" constant="34" id="G7w-th-MKM"/>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="GNx-K0-5tQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iPh-kY-6Ch" secondAttribute="bottom" constant="34" id="KYm-c7-NSP"/>
+                            <constraint firstItem="xBd-fb-kaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Ml1-07-3ho"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zh0-qb-pHk" secondAttribute="bottom" constant="34" id="Niz-ZN-OKK"/>
+                            <constraint firstItem="iPh-kY-6Ch" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="36" id="Or1-bj-nn3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rHn-Kb-rfY" secondAttribute="bottom" constant="34" id="Rtd-mG-865"/>
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" id="UfA-TU-37X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>

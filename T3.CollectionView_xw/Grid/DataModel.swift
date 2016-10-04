@@ -26,7 +26,17 @@ class DataModel {
                 nums[i][j] = Int(-1)
             }
         }
-        
+    }
+    
+    func assign_num_random(){
+        //initialize those cells with -1
+        for i in nums.indices {
+            for j in nums.indices {
+                if nums[i][j] == -1 {
+                    nums[i][j] = Int(arc4random() % 10)
+                }
+            }
+        }
     }
     
     func get_num(row:Int, column:Int) -> Int {

@@ -118,9 +118,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.reloadData() // update view
     }
 ////////////////////////////////////////////////////////////////////////////////////
-
+/////////////////////////////////  fill empty cells  ///////////////////////////////
+    @IBAction func fillEmptyCells(sender: UIButton) {
+        data.assign_num_random()//fill empty cells
+        collectionView.reloadData()//update view
+    }
     
-    
+////////////////////////////////////////////////////////////////////////////////////
     func getlocation(indexPath: NSIndexPath) -> (row: Int, column: Int) {
         let row: Int = indexPath.row / itemsPerRow
         let column: Int = indexPath.row % itemsPerRow
