@@ -22,7 +22,14 @@
                                 <rect key="frame" x="285" y="536" width="30" height="30"/>
                                 <state key="normal" title="5"/>
                                 <connections>
-                                    <action selector="sendValue5:didSelectItemAtIndexPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aub-Nv-Gyi"/>
+                                    <action selector="sendValue5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="boj-t8-jZM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHn-Kb-rfY">
+                                <rect key="frame" x="247" y="536" width="30" height="30"/>
+                                <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="sendValue4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8v-WV-zuC"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-fb-kaQ">
@@ -67,16 +74,81 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="oab-KZ-neS"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pD-D0-xNn">
+                                <rect key="frame" x="323" y="536" width="30" height="30"/>
+                                <state key="normal" title="6"/>
+                                <connections>
+                                    <action selector="sendValue6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4MT-0a-MF4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-2I-MCL">
+                                <rect key="frame" x="361" y="536" width="30" height="30"/>
+                                <state key="normal" title="7"/>
+                                <connections>
+                                    <action selector="sendValue7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MTH-5b-UgL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5g-3m-5cJ">
+                                <rect key="frame" x="399" y="536" width="30" height="30"/>
+                                <state key="normal" title="8"/>
+                                <connections>
+                                    <action selector="sendValue8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40K-f5-tQN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lI-gP-3sT">
+                                <rect key="frame" x="437" y="536" width="30" height="30"/>
+                                <state key="normal" title="9"/>
+                                <connections>
+                                    <action selector="sendValue9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="600-fb-059"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBL-VD-58R">
+                                <rect key="frame" x="209" y="536" width="30" height="30"/>
+                                <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="sendValue3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t2T-GW-IhS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh0-qb-pHk">
+                                <rect key="frame" x="171" y="536" width="30" height="30"/>
+                                <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="sendValue2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jL-CT-BJ0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-kY-6Ch">
+                                <rect key="frame" x="133" y="536" width="30" height="30"/>
+                                <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="sendValue1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKB-jU-i9c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1bL-7N-ek1"/>
+                            <constraint firstItem="qcz-2I-MCL" firstAttribute="leading" secondItem="9pD-D0-xNn" secondAttribute="trailing" constant="8" id="4FL-Qd-hWY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="201" id="5pg-4K-feV"/>
+                            <constraint firstItem="Vz8-lh-0kb" firstAttribute="leading" secondItem="rHn-Kb-rfY" secondAttribute="trailing" constant="8" id="Bns-E2-0DD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qcz-2I-MCL" secondAttribute="bottom" constant="34" id="G7w-th-MKM"/>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="GNx-K0-5tQ"/>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="KOE-8x-XoZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iPh-kY-6Ch" secondAttribute="bottom" constant="34" id="KYm-c7-NSP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zh0-qb-pHk" secondAttribute="bottom" constant="34" id="Niz-ZN-OKK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="100" id="QTa-rZ-y8M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rHn-Kb-rfY" secondAttribute="bottom" constant="34" id="Rtd-mG-865"/>
+                            <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" id="UfA-TU-37X"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vz8-lh-0kb" secondAttribute="bottom" constant="34" id="Xxx-pc-Akh"/>
+                            <constraint firstItem="9pD-D0-xNn" firstAttribute="leading" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="8" id="bRL-X7-TNL"/>
+                            <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="oBL-VD-58R" secondAttribute="trailing" constant="8" id="bWl-lT-NHW"/>
+                            <constraint firstItem="Zh0-qb-pHk" firstAttribute="leading" secondItem="iPh-kY-6Ch" secondAttribute="trailing" constant="8" id="cSK-8C-jfT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7lI-gP-3sT" secondAttribute="bottom" constant="34" id="dat-yr-85b"/>
                             <constraint firstItem="Vz8-lh-0kb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j4a-3X-6nG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n5g-3m-5cJ" secondAttribute="bottom" constant="34" id="l8B-Pt-qkb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9pD-D0-xNn" secondAttribute="bottom" constant="34" id="nhj-Dy-LKH"/>
+                            <constraint firstItem="oBL-VD-58R" firstAttribute="leading" secondItem="Zh0-qb-pHk" secondAttribute="trailing" constant="8" id="rgx-tP-J9V"/>
+                            <constraint firstItem="7lI-gP-3sT" firstAttribute="leading" secondItem="n5g-3m-5cJ" secondAttribute="trailing" constant="8" id="uoF-v8-sM7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

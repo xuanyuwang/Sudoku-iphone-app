@@ -13,7 +13,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     @IBOutlet weak var collectionView: UICollectionView!
     var data = DataModel(numItemsPerRow: 9, initialization: 1)
-    var buttonNumber: Int = 0
     var row_out: Int = 0
     var column_out: Int = 0
 
@@ -56,13 +55,45 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-    
-    @IBAction func sendValue5(sender: UIButton, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //buttonNumber = 5
+////////////////////////////////////////////////////////////////////////////////////
+    @IBAction func sendValue1(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 1) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue2(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 2) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue3(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 3) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue4(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 4) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue5(sender: UIButton) {
         data.set_num(row_out, column: column_out, value: 5) // update model
         collectionView.reloadData() // update view
     }
-    
+    @IBAction func sendValue6(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 6) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue7(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 7) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue8(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 8) // update model
+        collectionView.reloadData() // update view
+    }
+    @IBAction func sendValue9(sender: UIButton) {
+        data.set_num(row_out, column: column_out, value: 9) // update model
+        collectionView.reloadData() // update view
+    }
+////////////////////////////////////////////////////////////////////////////////////
+
     // selection behaviour
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // You can use indexPath to get "cell number x", or get the cell like:
@@ -73,11 +104,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         row_out = row
         column_out = column
-        
-        //data.set_num(row, column: column, value: buttonNumber) // update model
-        
-        
-        //collectionView.reloadData() // update view
     }
     
     func getlocation(indexPath: NSIndexPath) -> (row: Int, column: Int) {
