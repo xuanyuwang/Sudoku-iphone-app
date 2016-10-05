@@ -79,48 +79,111 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func sendValue1(sender: UIButton) {
-        data.set_num(row_out, column: column_out, value: 1) // update model
-        collectionView.reloadData() // update view
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
+            data.set_num(row_out, column: column_out, value: 1) // update model
+            collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue2(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 2) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue3(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 3) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue4(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 4) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue5(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 5) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue6(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 6) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue7(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 7) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue8(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 8) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
     
     @IBAction func sendValue9(sender: UIButton) {
+        if row_out == -1 && column_out == -1 {
+            
+        }
+        else{
         data.set_num(row_out, column: column_out, value: 9) // update model
         collectionView.reloadData() // update view
+            row_out = -1
+            column_out = -1
+        }
     }
 ////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////  fill empty cells  ///////////////////////////////
