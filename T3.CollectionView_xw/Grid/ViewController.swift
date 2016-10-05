@@ -13,8 +13,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     @IBOutlet weak var collectionView: UICollectionView!
     var data = DataModel(numItemsPerRow: 9, initialization: 1)
-    var row_out: Int = 0
-    var column_out: Int = 0
+    var row_out: Int = -1
+    var column_out: Int = -1
 
     private let itemsPerRow = 9
     
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DataCell", forIndexPath: indexPath) as! SudokuCollectionViewCell
         
-        cell.backgroundColor = UIColor.orangeColor()
+        cell.backgroundColor = UIColor.grayColor()
         
         var row, column : Int
         (row, column) = getlocation(indexPath)
@@ -48,7 +48,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         else{
             cell.label.text = String(data.get_num(row, column: column))
         }
-        
         
         return cell
     }
@@ -67,9 +66,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // You can use indexPath to get "cell number x", or get the cell like:
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SudokuCollectionViewCell
-        
+
         //change the color of the selected cell
-        cell.backgroundColor = UIColor.cyanColor()
+        cell.backgroundColor = UIColor.yellowColor()
         
         var row, column : Int
         (row, column) = getlocation(indexPath)
