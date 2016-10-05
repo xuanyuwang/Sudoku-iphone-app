@@ -37,6 +37,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DataCell", forIndexPath: indexPath) as! SudokuCollectionViewCell
         
+        cell.backgroundColor = UIColor.orangeColor()
+        
         var row, column : Int
         (row, column) = getlocation(indexPath)
 
@@ -64,7 +66,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // selection behaviour
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // You can use indexPath to get "cell number x", or get the cell like:
-        //let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SudokuCollectionViewCell
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SudokuCollectionViewCell
+        
+        //change the color of the selected cell
+        cell.backgroundColor = UIColor.cyanColor()
         
         var row, column : Int
         (row, column) = getlocation(indexPath)
