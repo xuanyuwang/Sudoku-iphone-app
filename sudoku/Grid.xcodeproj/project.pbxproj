@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4601221DA81FC1001751C9 /* sudoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4601211DA81FC1001751C9 /* sudoku.swift */; };
 		BA9FE6641DA317280064BA42 /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9FE6631DA317280064BA42 /* buttons.swift */; };
 		CA4351BD1D9C84A600DAE059 /* SudokuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4351BC1D9C84A600DAE059 /* SudokuCollectionViewCell.swift */; };
 		CA4351BF1D9D354100DAE059 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4351BE1D9D354100DAE059 /* DataModel.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA4601211DA81FC1001751C9 /* sudoku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sudoku.swift; sourceTree = "<group>"; };
 		BA9FE6631DA317280064BA42 /* buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buttons.swift; sourceTree = "<group>"; };
 		CA4351BC1D9C84A600DAE059 /* SudokuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA4351BE1D9D354100DAE059 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				CAA2D5871D9AE53500BEE49C /* AppDelegate.swift */,
 				CAA2D5891D9AE53500BEE49C /* ViewController.swift */,
+				BA4601211DA81FC1001751C9 /* sudoku.swift */,
 				CAA2D58B1D9AE53500BEE49C /* Main.storyboard */,
 				BA9FE6631DA317280064BA42 /* buttons.swift */,
 				CA4351BC1D9C84A600DAE059 /* SudokuCollectionViewCell.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4601221DA81FC1001751C9 /* sudoku.swift in Sources */,
 				CAA2D58A1D9AE53500BEE49C /* ViewController.swift in Sources */,
 				BA9FE6641DA317280064BA42 /* buttons.swift in Sources */,
 				CA4351BF1D9D354100DAE059 /* DataModel.swift in Sources */,
