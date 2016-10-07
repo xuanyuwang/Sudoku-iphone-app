@@ -13,13 +13,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     @IBOutlet weak var collectionView: UICollectionView!
     var data = DataModel(numItemsPerRow: 9, initialization: 1)
-    var row_out: Int = -1
-    var column_out: Int = -1
+    var rowOfSelectedCell: Int = -1
+    var columnOfSelectedCell: Int = -1
 
     private let itemsPerRow = 9
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //give an initial puzzle
+        data.passValidBoard()
+        collectionView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -42,11 +45,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var row, column : Int
         (row, column) = getlocation(indexPath)
 
-        if data.get_num(row, column: column) == -1 {
-            cell.label.text = ""
+        if data.get_display_state(row, column: column) {
+            cell.label.text = String(data.get_num(row, column: column))
         }
         else{
-            cell.label.text = String(data.get_num(row, column: column))
+            cell.label.text = ""
         }
         
         return cell
@@ -73,154 +76,88 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var row, column : Int
         (row, column) = getlocation(indexPath)
         
-        row_out = row
-        column_out = column
+        rowOfSelectedCell = row
+        columnOfSelectedCell = column
+    }
+    
+    func isToAct(buttonValue: Int) -> Bool{
+        if rowOfSelectedCell == -1 && columnOfSelectedCell == -1 {
+            return false
+        }
+        if data.cells[rowOfSelectedCell][columnOfSelectedCell].isClue == true {
+            return false
+        }
+        let temp: Int = data.get_num(rowOfSelectedCell, column: columnOfSelectedCell)
+        data.set_num(rowOfSelectedCell, column: columnOfSelectedCell, value: buttonValue)
+        if data.isValidNum(rowOfSelectedCell, column: columnOfSelectedCell) == false{
+            data.set_num(rowOfSelectedCell, column: columnOfSelectedCell, value: temp)
+            return false
+        }
+        return true
+    }
+    
+    func afterAssignValue() {
+        data.set_display_state(rowOfSelectedCell, column: columnOfSelectedCell, value: true)
+        collectionView.reloadData() // update view
+        rowOfSelectedCell = -1
+        columnOfSelectedCell = -1
     }
     
     @IBAction func sendValue1(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-            data.set_num(row_out, column: column_out, value: 1) // update model
-            collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(1) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue2(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 2) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(2) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue3(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 3) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(3) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue4(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 4) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(4) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue5(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 5) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(5) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue6(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 6) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(6) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue7(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 7) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(7) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue8(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 8) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(8) {
+            afterAssignValue()
         }
     }
     
     @IBAction func sendValue9(sender: UIButton) {
-        if row_out == -1 && column_out == -1 {
-            
-        }
-        else if data.cells[row_out][column_out].state == data.display {
-            
-        }
-        else{
-        data.set_num(row_out, column: column_out, value: 9) // update model
-        collectionView.reloadData() // update view
-            row_out = -1
-            column_out = -1
+        if isToAct(9) {
+            afterAssignValue()
         }
     }
     
-/////////////////////////////////  fill empty cells  ///////////////////////////////
-    @IBAction func fillEmptyCells(sender: UIButton) {
-        data.assign_num_random()//fill empty cells
-        var each_row = [Int](count: 9, repeatedValue: 0)
-        //var each_row_sorted: [Int] = []
-        for row_num in data.nums.indices{
-            for column_num in data.nums.indices{
-                each_row[column_num] = data.get_num(row_num, column: column_num)
-            }
-            each_row.sortInPlace(<)
-            for column_num in data.nums.indices{
-                data.set_num(row_num, column: column_num, value: each_row[column_num])
-            }
-        }
-        collectionView.reloadData()//update view
-    }
-    
+////////////////////////////////////////////////////////////////////////////////////
     @IBAction func givePuzzle(sender: UIButton) {
         data.passValidBoard()
         collectionView.reloadData()

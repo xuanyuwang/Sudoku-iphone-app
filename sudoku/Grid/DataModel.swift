@@ -10,71 +10,49 @@ import Foundation
 
 class DataModel {
     struct cell{
-        var value: Int = 0
-        var state: Int = 0
+        var value: Int = -1
+        var display: Bool = false
+        var isClue: Bool = false
     }
-    var nums: [[Int]] = []
     var cells: [[cell]] = []
-    let display: Int = 1
     
     init(numItemsPerRow: Int, initialization: Int) {
-        nums = Array(count: numItemsPerRow, repeatedValue: Array(count: numItemsPerRow, repeatedValue: initialization))
         cells = Array(count: numItemsPerRow, repeatedValue: Array(count: numItemsPerRow, repeatedValue: cell()))
-        
-        for i in nums.indices {
-            for j in nums.indices {
-                nums[i][j] = Int(-1)
-            }
-        }
     }
     
-    func assign_num_random(){
-        //initialize those cells with -1
-        for i in nums.indices {
-            for j in nums.indices {
-                if nums[i][j] == -1 {
-                    nums[i][j] = Int(arc4random() % 10)
-                }
-            }
-        }
-    }
     
     func get_num(row:Int, column:Int) -> Int {
-        return nums[row][column]
+        return cells[row][column].value
+    }
+    
+    func get_display_state(row: Int, column: Int) -> Bool{
+        return cells[row][column].display
     }
     
     func set_num(row:Int, column:Int, value:Int) {
-        nums[row][column] = value
+        cells[row][column].value = value
+    }
+    
+    func set_display_state(row:Int, column:Int, value:Bool) {
+        cells[row][column].display = value
     }
     
     func passValidBoard() {
-        for i in nums.indices {
-            for j in nums.indices {
-                nums[i][j] = Int(-1)
+        for i in cells.indices {
+            for j in cells.indices {
+                cells[i][j].value = Int(-1)
             }
         }
         generateSudokuPuzzle(&cells, x: 0, y: 0)
-        hide(&cells)
-        for i in nums.indices {
-            for j in nums.indices {
-                if cells[i][j].state == display {
-                    nums[i][j] = cells[i][j].value
-                }
-            }
-        }
+        selectClues(&cells)
     }
     
-    func hide(inout cells: [[cell]]) {
-        for i in 0...8 {
-            for j in 0...8 {
-                cells[i][j].state = display
-            }
-        }
-        
-        for _ in 0...30 {
-            var xvalue: Int = Int(arc4random() % 9)
-            var yvalue: Int = Int(arc4random() % 9)
-            cells[xvalue][yvalue].state = 0
+    func selectClues(inout cells: [[cell]]) {
+        for _ in 0...50 {
+            let xValue: Int = Int(arc4random() % 9)
+            let yValue: Int = Int(arc4random() % 9)
+            cells[xValue][yValue].isClue = true
+            cells[xValue][yValue].display = true
         }
     }
     
@@ -134,7 +112,7 @@ class DataModel {
         }
         
         while numOfValidNums > 0 {
-            var index: Int = Int(arc4random() % UInt32(numOfValidNums))
+            let index: Int = Int(arc4random() % UInt32(numOfValidNums))
             cells[x][y].value = numsToAssign[index]
             numsToAssign[index] = numsToAssign[numOfValidNums - 1]
             numOfValidNums -= 1
@@ -148,5 +126,36 @@ class DataModel {
             }
         }
         return 0
+    }
+
+    func isValidNum(row: Int, column: Int) -> Bool {
+        //figure if the current value has been used in the same column
+        for i in 0...8 {
+            if i != column &&
+                cells[row][i].display &&
+                cells[row][column].value == cells[row][i].value {
+                return false
+            }
+        }
+        
+        //figure if the current value has been used in the same row
+        for i in 0...8 {
+            if i != row &&
+                cells[i][column].display &&
+                cells[row][column].value == cells[i][column].value {
+                return false
+            }
+        }
+        //figure if the current value has been used in the same block
+        for i in (3*(row/3))...(3*(row/3)+3 - 1) {
+            for j in (3*(column/3))...(3*(column/3)+3 - 1) {
+                if (i != row && j != column) &&
+                    cells[i][j].display &&
+                    cells[row][column].value == cells[i][j].value {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }

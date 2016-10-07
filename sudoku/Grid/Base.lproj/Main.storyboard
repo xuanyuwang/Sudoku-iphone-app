@@ -81,13 +81,6 @@
                                     <action selector="sendValue1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKB-jU-i9c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD6-u5-Avo">
-                                <rect key="frame" x="257" y="560" width="87" height="30"/>
-                                <state key="normal" title="Sort the grid"/>
-                                <connections>
-                                    <action selector="fillEmptyCells:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1TK-Zm-Z4w"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-fb-kaQ">
                                 <rect key="frame" x="0.0" y="50" width="600" height="450"/>
                                 <color key="backgroundColor" red="0.99962579024227172" green="1" blue="0.99786115976873757" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,7 +148,6 @@
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" id="UfA-TU-37X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vz8-lh-0kb" secondAttribute="bottom" constant="34" id="Xxx-pc-Akh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sD6-u5-Avo" secondAttribute="bottom" constant="10" id="Y2W-hG-Iqg"/>
                             <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="a4T-84-vIc" secondAttribute="trailing" constant="30" id="a1H-qe-Dg5"/>
                             <constraint firstItem="9pD-D0-xNn" firstAttribute="leading" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="8" id="bRL-X7-TNL"/>
                             <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="oBL-VD-58R" secondAttribute="trailing" constant="8" id="bWl-lT-NHW"/>
@@ -166,7 +158,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9pD-D0-xNn" secondAttribute="bottom" constant="34" id="nhj-Dy-LKH"/>
                             <constraint firstItem="oBL-VD-58R" firstAttribute="leading" secondItem="Zh0-qb-pHk" secondAttribute="trailing" constant="8" id="rgx-tP-J9V"/>
                             <constraint firstItem="7lI-gP-3sT" firstAttribute="leading" secondItem="n5g-3m-5cJ" secondAttribute="trailing" constant="8" id="uoF-v8-sM7"/>
-                            <constraint firstItem="sD6-u5-Avo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yIF-d5-6hi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
