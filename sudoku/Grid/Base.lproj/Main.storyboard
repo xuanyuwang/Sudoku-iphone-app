@@ -130,6 +130,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="oab-KZ-neS"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4T-84-vIc">
+                                <rect key="frame" x="187" y="560" width="30" height="30"/>
+                                <state key="normal" title="Gen"/>
+                                <connections>
+                                    <action selector="givePuzzle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sJw-mt-Ziv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -144,10 +151,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zh0-qb-pHk" secondAttribute="bottom" constant="34" id="Niz-ZN-OKK"/>
                             <constraint firstItem="iPh-kY-6Ch" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="36" id="Or1-bj-nn3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rHn-Kb-rfY" secondAttribute="bottom" constant="34" id="Rtd-mG-865"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a4T-84-vIc" secondAttribute="bottom" constant="10" id="Sb6-AE-LLJ"/>
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" id="UfA-TU-37X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vz8-lh-0kb" secondAttribute="bottom" constant="34" id="Xxx-pc-Akh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sD6-u5-Avo" secondAttribute="bottom" constant="10" id="Y2W-hG-Iqg"/>
+                            <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="a4T-84-vIc" secondAttribute="trailing" constant="30" id="a1H-qe-Dg5"/>
                             <constraint firstItem="9pD-D0-xNn" firstAttribute="leading" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="8" id="bRL-X7-TNL"/>
                             <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="oBL-VD-58R" secondAttribute="trailing" constant="8" id="bWl-lT-NHW"/>
                             <constraint firstItem="Zh0-qb-pHk" firstAttribute="leading" secondItem="iPh-kY-6Ch" secondAttribute="trailing" constant="8" id="cSK-8C-jfT"/>
