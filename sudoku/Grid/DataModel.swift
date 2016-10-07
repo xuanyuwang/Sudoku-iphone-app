@@ -15,6 +15,7 @@ class DataModel {
     }
     var nums: [[Int]] = []
     var cells: [[cell]] = []
+    let display: Int = 1
     
     init(numItemsPerRow: Int, initialization: Int) {
         nums = Array(count: numItemsPerRow, repeatedValue: Array(count: numItemsPerRow, repeatedValue: initialization))
@@ -47,11 +48,33 @@ class DataModel {
     }
     
     func passValidBoard() {
-        generateSudokuPuzzle(&cells, x: 0, y: 0)
         for i in nums.indices {
             for j in nums.indices {
-                nums[i][j] = cells[i][j].value
+                nums[i][j] = Int(-1)
             }
+        }
+        generateSudokuPuzzle(&cells, x: 0, y: 0)
+        hide(&cells)
+        for i in nums.indices {
+            for j in nums.indices {
+                if cells[i][j].state == display {
+                    nums[i][j] = cells[i][j].value
+                }
+            }
+        }
+    }
+    
+    func hide(inout cells: [[cell]]) {
+        for i in 0...8 {
+            for j in 0...8 {
+                cells[i][j].state = display
+            }
+        }
+        
+        for _ in 0...30 {
+            var xvalue: Int = Int(arc4random() % 9)
+            var yvalue: Int = Int(arc4random() % 9)
+            cells[xvalue][yvalue].state = 0
         }
     }
     
