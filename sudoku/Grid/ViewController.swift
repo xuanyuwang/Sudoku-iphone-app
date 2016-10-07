@@ -80,6 +80,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func sendValue1(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
             
+        }else if data.cells[row_out][column_out].state == data.display {
+            
         }
         else{
             data.set_num(row_out, column: column_out, value: 1) // update model
@@ -91,6 +93,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func sendValue2(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
+            
+        }else if data.cells[row_out][column_out].state == data.display {
             
         }
         else{
@@ -104,6 +108,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func sendValue3(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
             
+        }else if data.cells[row_out][column_out].state == data.display {
+            
         }
         else{
         data.set_num(row_out, column: column_out, value: 3) // update model
@@ -115,6 +121,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func sendValue4(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
+            
+        }else if data.cells[row_out][column_out].state == data.display {
             
         }
         else{
@@ -128,6 +136,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func sendValue5(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
             
+        }else if data.cells[row_out][column_out].state == data.display {
+            
         }
         else{
         data.set_num(row_out, column: column_out, value: 5) // update model
@@ -139,6 +149,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func sendValue6(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
+            
+        }else if data.cells[row_out][column_out].state == data.display {
             
         }
         else{
@@ -152,6 +164,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func sendValue7(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
             
+        }else if data.cells[row_out][column_out].state == data.display {
+            
         }
         else{
         data.set_num(row_out, column: column_out, value: 7) // update model
@@ -164,6 +178,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func sendValue8(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
             
+        }else if data.cells[row_out][column_out].state == data.display {
+            
         }
         else{
         data.set_num(row_out, column: column_out, value: 8) // update model
@@ -175,6 +191,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func sendValue9(sender: UIButton) {
         if row_out == -1 && column_out == -1 {
+            
+        }
+        else if data.cells[row_out][column_out].state == data.display {
             
         }
         else{
