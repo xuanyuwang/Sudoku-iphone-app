@@ -184,7 +184,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             column_out = -1
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+    
 /////////////////////////////////  fill empty cells  ///////////////////////////////
     @IBAction func fillEmptyCells(sender: UIButton) {
         data.assign_num_random()//fill empty cells
@@ -202,6 +202,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.reloadData()//update view
     }
     
+    @IBAction func givePuzzle(sender: UIButton) {
+        data.passValidBoard()
+        collectionView.reloadData()
+    }
 ////////////////////////////////////////////////////////////////////////////////////
     func getlocation(indexPath: NSIndexPath) -> (row: Int, column: Int) {
         let row: Int = indexPath.row / itemsPerRow

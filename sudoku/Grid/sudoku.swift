@@ -13,7 +13,7 @@ struct cell{
     var state: Int
 }
 
-func generateSudokuPuzzle(cells: [[cell]], x: Int, y: Int) -> Int {
+func generateSudokuPuzzle(inout cells: [[cell]], x: Int, y: Int) -> Int {
     var stateOfNums = Array(count: 9, repeatedValue: 1)
     let used: Int = 0
 //////////////////////////////////////////////////////////////////////////
@@ -39,12 +39,12 @@ func generateSudokuPuzzle(cells: [[cell]], x: Int, y: Int) -> Int {
         numOfValidNums += stateOfNums[i]
     }
     
-    var NumsToAssign = [Int]()
+    var numsToAssign = [Int]()
     
     var j: Int = 0
     for i in 0...8 {
         if stateOfNums[i] == 1 {
-            NumsToAssign[j] = i + 1
+            numsToAssign[j] = i + 1
             j += 1
         }
     }
@@ -56,6 +56,24 @@ func generateSudokuPuzzle(cells: [[cell]], x: Int, y: Int) -> Int {
         ny = y + 1
         nx = 0
     }
+    else{
+        ny = y
+        nx = x + 1
+    }
     
+    while numOfValidNums > 0 {
+        var index: Int = Int(arc4random() % UInt32(numOfValidNums))
+        cells[x][y].value = numsToAssign[index]
+        numsToAssign[index] = numsToAssign[numOfValidNums - 1]
+        numOfValidNums -= 1
+        
+        if x == 8 && y == 8 {
+            return 1
+        }
+        
+        if (generateSudokuPuzzle(&cells, x: nx, y: ny)) == 1 {
+            return 1
+        }
+    }
     return 0
 }
