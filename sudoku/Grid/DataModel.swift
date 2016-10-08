@@ -14,6 +14,7 @@ class DataModel {
         var display: Bool = false
         var isClue: Bool = false
     }
+
     var cells: [[cell]] = []
     
     init(numItemsPerRow: Int, initialization: Int) {
@@ -37,14 +38,36 @@ class DataModel {
         cells[row][column].display = value
     }
     
-    func passValidBoard() {
+    func getPuzzle() {
+        //initialize grids
         for i in cells.indices {
             for j in cells.indices {
                 cells[i][j].value = Int(-1)
+                cells[i][j].display = false
+                cells[i][j].isClue = false
             }
         }
-        generateSudokuPuzzle(&cells, x: 0, y: 0)
-        selectClues(&cells)
+        
+        //generate
+        let gen = Generator()
+        
+        // set the difficulty of our puzzle; needs to be in the range (0.0, 1.0) with lower being easier
+        let difficulty = 0.1
+        
+        // generate a puzzle...
+        let puzzle = gen.generate(difficulty, verbose: true)
+        for i in cells.indices {
+            for j in cells.indices {
+                if  puzzle.grid[i][j] != 0{
+                    cells[i][j].value = Int(puzzle.grid[i][j])
+                    cells[i][j].display = true
+                    cells[i][j].isClue = true
+                }
+            }
+        }
+        
+        //generateSudokuPuzzle(&cells, x: 0, y: 0)
+        //selectClues(&cells)
     }
     
     func selectClues(inout cells: [[cell]]) {

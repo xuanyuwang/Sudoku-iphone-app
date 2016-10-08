@@ -21,7 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         //give an initial puzzle
-        data.passValidBoard()
+        data.getPuzzle()
         collectionView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -159,7 +159,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
 ////////////////////////////////////////////////////////////////////////////////////
     @IBAction func givePuzzle(sender: UIButton) {
-        data.passValidBoard()
+        data.getPuzzle()
         collectionView.reloadData()
     }
 ////////////////////////////////////////////////////////////////////////////////////
