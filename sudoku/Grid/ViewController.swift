@@ -9,21 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    private let itemsPerRow = 9
     private let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var gameStatus: UILabel!
     var data = DataModel(numItemsPerRow: 9, initialization: 1)
     var rowOfSelectedCell: Int = -1
     var columnOfSelectedCell: Int = -1
-
-    private let itemsPerRow = 9
+    @IBOutlet weak var bigLabel: UILabel!
+    var isOnlySelected: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //give an initial puzzle
         data.getPuzzle()
         collectionView.reloadData()
+        bigLabel.text = ""
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -78,6 +78,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
+    
+    //reset all cells' color
+
 ////////////////////////////////////////////////////////////////////////////////////
     // selection behaviour
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -85,7 +88,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SudokuCollectionViewCell
 
         //change the color of the selected cell
-        cell.backgroundColor = UIColor.yellowColor()
+        if isOnlySelected {
+            cell.backgroundColor = UIColor.whiteColor()
+            isOnlySelected = !isOnlySelected
+        }else{
+            //collectionView.reloadData()
+            cell.backgroundColor = UIColor.whiteColor()
+            isOnlySelected = !isOnlySelected
+        }
         
         var row, column : Int
         (row, column) = getlocation(indexPath)
@@ -129,8 +139,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         columnOfSelectedCell = -1
         
         if isFilledUp() {
-            gameStatus.text = "You Win!"
+            bigLabel.text = "You Win!"
         }
+        isOnlySelected = true
     }
     
     @IBAction func sendValue1(sender: UIButton) {
