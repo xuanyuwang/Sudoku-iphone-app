@@ -41,7 +41,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DataCell", forIndexPath: indexPath) as! SudokuCollectionViewCell
         
-        cell.backgroundColor = UIColor.grayColor()
+        var x, y : Int
+        (x, y) = getlocation(indexPath)
+        if (x/3 == 0 && y/3 == 1) ||
+        (x/3 == 2 && y/3 == 1) ||
+        (x/3 == 1 && y/3 == 0) ||
+            (x/3 == 1 && y/3 == 2){
+            cell.backgroundColor = UIColor(red: 230/255, green: 175/255, blue: 46/255, alpha: 1.0)
+        }
+        else{
+            cell.backgroundColor = UIColor(red: 190/255, green: 183/255, blue: 164/255, alpha: 1.0)
+        }
+        
         
         var row, column : Int
         (row, column) = getlocation(indexPath)
@@ -52,7 +63,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         else{
             cell.label.text = ""
         }
-        
+        cell.label.textColor = UIColor(red: 173/255, green: 52/255, blue: 62/255, alpha: 1.0) /* #ffffff */
+
+
         return cell
     }
     
