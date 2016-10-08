@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     private let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var gameStatus: UILabel!
     var data = DataModel(numItemsPerRow: 9, initialization: 1)
     var rowOfSelectedCell: Int = -1
     var columnOfSelectedCell: Int = -1
@@ -96,11 +97,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return true
     }
     
+    //check whether the puzzel is filled up, i.e. no empty cell
+    func isFilledUp() -> Bool {
+        for i in 0...8 {
+            for j in 0...8 {
+                if data.cells[i][j].display == false {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
     func afterAssignValue() {
         data.set_display_state(rowOfSelectedCell, column: columnOfSelectedCell, value: true)
         collectionView.reloadData() // update view
         rowOfSelectedCell = -1
         columnOfSelectedCell = -1
+        
+        if isFilledUp() {
+            gameStatus.text = "You Win!"
+        }
     }
     
     @IBAction func sendValue1(sender: UIButton) {

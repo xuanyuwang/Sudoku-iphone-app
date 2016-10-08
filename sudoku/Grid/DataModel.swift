@@ -8,13 +8,15 @@
 
 import Foundation
 
-class DataModel {
-    struct cell{
-        var value: Int = -1
-        var display: Bool = false
-        var isClue: Bool = false
-    }
+struct cell{
+    var value: Int = -1
+    var display: Bool = false
+    var isClue: Bool = false
+}
 
+class DataModel {
+    
+    var numOfEmptyCell = 81
     var cells: [[cell]] = []
     
     init(numItemsPerRow: Int, initialization: Int) {
@@ -52,7 +54,7 @@ class DataModel {
         let gen = Generator()
         
         // set the difficulty of our puzzle; needs to be in the range (0.0, 1.0) with lower being easier
-        let difficulty = 0.1
+        let difficulty = 0.01
         
         // generate a puzzle...
         let puzzle = gen.generate(difficulty, verbose: true)

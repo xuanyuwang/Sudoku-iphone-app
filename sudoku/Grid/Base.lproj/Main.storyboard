@@ -130,6 +130,18 @@
                                     <action selector="givePuzzle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sJw-mt-Ziv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jp1-US-dGL">
+                                <rect key="frame" x="14" y="29" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep going!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdA-tU-vaw">
+                                <rect key="frame" x="339" y="564" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -142,9 +154,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iPh-kY-6Ch" secondAttribute="bottom" constant="34" id="KYm-c7-NSP"/>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Ml1-07-3ho"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zh0-qb-pHk" secondAttribute="bottom" constant="34" id="Niz-ZN-OKK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XdA-tU-vaw" secondAttribute="bottom" constant="15" id="OQH-Pe-qXG"/>
                             <constraint firstItem="iPh-kY-6Ch" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="36" id="Or1-bj-nn3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rHn-Kb-rfY" secondAttribute="bottom" constant="34" id="Rtd-mG-865"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a4T-84-vIc" secondAttribute="bottom" constant="10" id="Sb6-AE-LLJ"/>
+                            <constraint firstItem="XdA-tU-vaw" firstAttribute="leading" secondItem="a4T-84-vIc" secondAttribute="trailing" constant="122" id="SgB-ct-KMU"/>
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" id="UfA-TU-37X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vz8-lh-0kb" secondAttribute="bottom" constant="34" id="Xxx-pc-Akh"/>
@@ -167,6 +181,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="xBd-fb-kaQ" id="yiJ-CC-R2w"/>
+                        <outlet property="gameStatus" destination="XdA-tU-vaw" id="Dwk-dX-GDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
