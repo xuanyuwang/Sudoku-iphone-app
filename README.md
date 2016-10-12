@@ -1,2 +1,3 @@
-# T3_ios
-For lab3 soduku view
+# SUDOKU Iphone app
+
+# Feature
