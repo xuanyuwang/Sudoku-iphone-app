@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -124,7 +124,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jp1-US-dGL">
-                                <rect key="frame" x="0.0" y="74" width="0.0" height="0.0"/>
+                                <rect key="frame" x="83" y="-95" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -148,6 +148,27 @@
                                     <action selector="givePuzzle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sJw-mt-Ziv"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.01" maxValue="0.98999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-se-Ubk">
+                                <rect key="frame" x="241" y="503" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="xGO-Cc-yd7"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slidervalueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Y9Z-4M-cZk"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17q-VD-xFi">
+                                <rect key="frame" x="384" y="508" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-iM-0QF">
+                                <rect key="frame" x="146" y="508" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -156,6 +177,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="201" id="5pg-4K-feV"/>
                             <constraint firstItem="9pD-D0-xNn" firstAttribute="baseline" secondItem="Vz8-lh-0kb" secondAttribute="baseline" id="97V-Pb-E6o"/>
                             <constraint firstItem="qcz-2I-MCL" firstAttribute="leading" secondItem="9pD-D0-xNn" secondAttribute="trailing" constant="8" symbolic="YES" id="9wF-0w-kX7"/>
+                            <constraint firstItem="Oaz-se-Ubk" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="3" id="C3Q-8y-C98"/>
                             <constraint firstItem="Vz8-lh-0kb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dxy-3a-V5S"/>
                             <constraint firstItem="Vz8-lh-0kb" firstAttribute="leading" secondItem="rHn-Kb-rfY" secondAttribute="trailing" constant="8" symbolic="YES" id="FnU-wR-lRx"/>
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="GNx-K0-5tQ"/>
@@ -164,10 +186,12 @@
                             <constraint firstItem="xBd-fb-kaQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Ml1-07-3ho"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zh0-qb-pHk" secondAttribute="bottom" constant="34" id="Niz-ZN-OKK"/>
                             <constraint firstItem="iPh-kY-6Ch" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="36" id="Or1-bj-nn3"/>
+                            <constraint firstItem="gFK-iM-0QF" firstAttribute="trailing" secondItem="oBL-VD-58R" secondAttribute="trailing" id="SJR-NM-vgM"/>
                             <constraint firstItem="0gR-R9-rfm" firstAttribute="trailing" secondItem="xBd-fb-kaQ" secondAttribute="trailing" id="ToN-St-xlP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBL-VD-58R" secondAttribute="bottom" constant="34" id="UwB-O3-Jt7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a4T-84-vIc" secondAttribute="bottom" constant="8" symbolic="YES" id="Uz3-4U-VGU"/>
                             <constraint firstItem="a4T-84-vIc" firstAttribute="centerX" secondItem="Vz8-lh-0kb" secondAttribute="centerX" id="aAK-1n-dZO"/>
+                            <constraint firstItem="gFK-iM-0QF" firstAttribute="baseline" secondItem="17q-VD-xFi" secondAttribute="baseline" id="b9f-mr-IuW"/>
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="qcz-2I-MCL" secondAttribute="trailing" constant="8" symbolic="YES" id="bpz-rk-V5n"/>
                             <constraint firstItem="Zh0-qb-pHk" firstAttribute="leading" secondItem="iPh-kY-6Ch" secondAttribute="trailing" constant="8" id="cSK-8C-jfT"/>
                             <constraint firstItem="rHn-Kb-rfY" firstAttribute="baseline" secondItem="oBL-VD-58R" secondAttribute="baseline" id="cjM-uN-OB7"/>
@@ -175,11 +199,14 @@
                             <constraint firstItem="rHn-Kb-rfY" firstAttribute="leading" secondItem="oBL-VD-58R" secondAttribute="trailing" constant="8" symbolic="YES" id="iQV-67-rdY"/>
                             <constraint firstItem="0gR-R9-rfm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="jeW-hF-O2s"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n5g-3m-5cJ" secondAttribute="bottom" constant="34" id="l8B-Pt-qkb"/>
+                            <constraint firstItem="17q-VD-xFi" firstAttribute="top" secondItem="xBd-fb-kaQ" secondAttribute="bottom" constant="8" symbolic="YES" id="phi-mC-WDZ"/>
                             <constraint firstItem="9pD-D0-xNn" firstAttribute="leading" secondItem="Vz8-lh-0kb" secondAttribute="trailing" constant="8" symbolic="YES" id="plE-tr-TeF"/>
+                            <constraint firstItem="Oaz-se-Ubk" firstAttribute="centerX" secondItem="Vz8-lh-0kb" secondAttribute="centerX" id="rCd-sh-aVt"/>
                             <constraint firstItem="oBL-VD-58R" firstAttribute="leading" secondItem="Zh0-qb-pHk" secondAttribute="trailing" constant="8" id="rgx-tP-J9V"/>
                             <constraint firstItem="7lI-gP-3sT" firstAttribute="leading" secondItem="n5g-3m-5cJ" secondAttribute="trailing" constant="8" id="uoF-v8-sM7"/>
                             <constraint firstItem="0gR-R9-rfm" firstAttribute="leading" secondItem="xBd-fb-kaQ" secondAttribute="leading" id="uwZ-Zg-Cvn"/>
                             <constraint firstItem="n5g-3m-5cJ" firstAttribute="leading" secondItem="a4T-84-vIc" secondAttribute="trailing" constant="30" id="x8U-31-UX7"/>
+                            <constraint firstItem="17q-VD-xFi" firstAttribute="leading" secondItem="Oaz-se-Ubk" secondAttribute="trailing" constant="27" id="zmA-lC-PNn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -190,6 +217,8 @@
                     <connections>
                         <outlet property="bigLabel" destination="0gR-R9-rfm" id="MYw-vH-B2W"/>
                         <outlet property="collectionView" destination="xBd-fb-kaQ" id="yiJ-CC-R2w"/>
+                        <outlet property="level" destination="17q-VD-xFi" id="QaI-ON-V6F"/>
+                        <outlet property="slider" destination="Oaz-se-Ubk" id="UG2-pf-jOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

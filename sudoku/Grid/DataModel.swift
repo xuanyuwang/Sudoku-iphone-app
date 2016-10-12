@@ -18,6 +18,7 @@ class DataModel {
     
     var numOfEmptyCell = 81
     var cells: [[cell]] = []
+    var level: Double = 0.5
     
     init(numItemsPerRow: Int, initialization: Int) {
         cells = Array(count: numItemsPerRow, repeatedValue: Array(count: numItemsPerRow, repeatedValue: cell()))
@@ -54,7 +55,7 @@ class DataModel {
         let gen = Generator()
         
         // set the difficulty of our puzzle; needs to be in the range (0.0, 1.0) with lower being easier
-        let difficulty = 0.01
+        let difficulty = level
         
         // generate a puzzle...
         let puzzle = gen.generate(difficulty, verbose: true)

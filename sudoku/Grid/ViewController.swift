@@ -16,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var rowOfSelectedCell: Int = -1
     var columnOfSelectedCell: Int = -1
     @IBOutlet weak var bigLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var level: UILabel!
     var isOnlySelected: Bool = true
     
     override func viewDidLoad() {
@@ -32,6 +34,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func slidervalueChanged(sender: UISlider) {
+        let currentValue = Double(sender.value)
+        data.level = Double(currentValue)
+        level.text = String(format: "%.2f", currentValue)
+    }
     // how many items you want to show in its grid
     func collectionView(collectionView: UICollectionView,  numberOfItemsInSection section: Int) -> Int {
         return itemsPerRow*itemsPerRow
